@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75F09AE9-1B07-4358-AF0C-A89532F9C35C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RemoteOpenDoor</RootNamespace>
+    <AssemblyName>RemoteOpenDoor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\0Harmony - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Assembly-CSharp - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Assembly-CSharp-firstpass - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\BepInEx - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientNetworkTransform - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\ClientNetworkTransform - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="DissonanceVoip - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\DissonanceVoip - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch Transport for Netcode for GameObjects - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Facepunch Transport for Netcode for GameObjects - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64 - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Facepunch.Steamworks.Win64 - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="LethalLib">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\LethalLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LethalLib - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\LethalLib - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Mono.Cecil - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\MonoMod.RuntimeDetour - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\MonoMod.Utils - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\netstandard - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Newtonsoft.Json - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.AI.Navigation - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.AI.Navigation - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Animation.Rigging - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Burst - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Burst.Unsafe - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Collections - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport - Copy">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Collections.LowLevel.ILSupport - Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.Common">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.MetricTypes">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.MetricTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStats">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsReporting">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.NetworkProfiler.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Components">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Netcode.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Transport">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Networking.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Profiling.Core">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Profiling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Internal">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Services.Core.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Relay">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Services.Relay.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ContentLoadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.PropertiesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\AddRemotePropShop\AddRemotePropShop\bin\Debug\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Plugins\RemoteOpenDoor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
