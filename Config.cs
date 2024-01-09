@@ -1,13 +1,13 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 
-namespace Template
+namespace RemoteOpenDoor
 {
-    public class PluginConfig
+    public class RemoteConfig
     {
         ConfigEntry<bool> CustomConfigValue;
 
         // Constructor
-        public PluginConfig()
+        public RemoteConfig()
         {
         }
 
