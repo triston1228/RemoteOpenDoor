@@ -1,32 +1,27 @@
-﻿using BepInEx.Logging;
+using BepInEx.Logging;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using UnityEngine;
 
-namespace RemoteOpenDoor.Plugins
+namespace RemoteOpenDoor.Patch
 {
 
 
     [HarmonyPatch(typeof(RemoteProp))]
     internal class RemotePropPatch
     {
+
         public static ManualLogSource Logger;
 
-        public const string PLUGIN_ID = "example.RemoteOpenDoor";
-        public const string PLUGIN_NAME = "Remote Open Door";
-        public const string PLUGIN_VERSION = "1.0.0";
-        public const string PLUGIN_GUID = "com.Giddy.RemoteOpenDoor";
+        private static RemotePropPatchMB remotePropPatchMB;
+
+        public static float DoorActivationDistance = 15f;
 
         // Add the MonoBehaviour if you need to perform operations that require a MonoBehaviour context.
         public class RemotePropPatchMB : MonoBehaviour
         {
         }
-
-        private static RemotePropPatchMB remotePropPatchMB;
 
         // Threshold distance within which the remote can trigger the door
         public static float doorActivationDistance = 15f;
@@ -59,17 +54,34 @@ namespace RemoteOpenDoor.Plugins
                 Logger?.LogInfo("No doors found in the scene to interact with.");
             }
 
-            foreach (var door in doors)
+            // Find all doors within the activation distance
+            var doorsWithinDistance = doors
+                .Select(door => new { Door = door, Distance = Vector3.Distance(playerTransform.position, door.transform.position) })
+                .Where(doorInfo => doorInfo.Distance <= DoorActivationDistance)
+                .OrderBy(doorInfo => doorInfo.Distance)
+                .ToList();
+
+            if (doorsWithinDistance.Count > 0)
             {
-                float distanceToDoor = Vector3.Distance(playerTransform.position, door.transform.position);
-                if (distanceToDoor <= doorActivationDistance)
+                bool GetIsPoweredOn(TerminalAccessibleObject door)
                 {
-                    Logger?.LogInfo($"Activating door {door.gameObject.name} at distance {distanceToDoor}");
-                    door.SetDoorToggleLocalClient();
+                    FieldInfo fieldInfo = typeof(TerminalAccessibleObject).GetField("isPoweredOn", BindingFlags.NonPublic | BindingFlags.Instance);
+                    return (bool)fieldInfo?.GetValue(door);
+                }
+                // Select the closest door
+                var closestDoorInfo = doorsWithinDistance.First();
+                if (GetIsPoweredOn(closestDoorInfo.Door)) // Use the isPoweredOn property
+                {
+                    Logger?.LogInfo($"Activating closest door {closestDoorInfo.Door.gameObject.name} at distance {closestDoorInfo.Distance}");
+                    closestDoorInfo.Door.SetDoorToggleLocalClient();
+
+                    // Update the server about the door status
+                    bool doorStatus = closestDoorInfo.Door.GetComponent<AnimatedObjectTrigger>().boolValue;
+                    closestDoorInfo.Door.SetDoorOpenServerRpc(doorStatus);
                 }
                 else
                 {
-                    Logger?.LogInfo($"Door {door.gameObject.name} is too far to activate (Distance: {distanceToDoor})");
+                    HUDManager.Instance.DisplayTip("Door Unpowered", "The door cannot be opened as it is unpowered.");
                 }
             }
 
