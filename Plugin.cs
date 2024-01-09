@@ -1,9 +1,9 @@
-﻿using BepInEx;
+using BepInEx;
 
 using HarmonyLib;
 using BepInEx.Logging;
 
-namespace Template
+namespace RemoteOpenDoor
 {
     public static class PluginInfo
     {
@@ -20,7 +20,7 @@ namespace Template
 
         public ManualLogSource PluginLogger;
 
-        public PluginConfig PluginConfig;
+        public RemoteConfig PluginConfig;
 
         private void Awake()
         {
@@ -40,7 +40,7 @@ namespace Template
 
         private void LoadConfig()
         {
-            PluginConfig = new PluginConfig();
+            PluginConfig = new RemoteConfig();
             PluginConfig.BindConfig(Config);
         }
     }
